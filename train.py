@@ -1,24 +1,18 @@
 import os
 import argparse
-
 from tqdm import tqdm
 import pandas as pd
 import joblib
 import glob
-
 from collections import OrderedDict
 import torch
 import torch.backends.cudnn as cudnn
-
 import torch.optim as optim
-
 import torchvision.transforms as transforms
 from PIL import Image
 from torch.utils.data import DataLoader, Dataset
 from network.net import MODEL as net
-
-from loss import ssim_ir, ssim_vi,RMI_ir,RMI_vi
-
+from loss import ssim_ir, ssim_vi, RMI_ir, RMI_vi
 
 device = torch.device('cuda:0')
 use_gpu = torch.cuda.is_available()
